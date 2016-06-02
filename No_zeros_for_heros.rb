@@ -9,3 +9,12 @@
 #1050 -> 105
 #-1050 -> -105
 #Zero alone is fine, don't worry about it. Poor guy anyway
+
+
+def no_boring_zeros(number)
+  return number if number == 0
+  until number % 10 != 0 do
+    number = number / 10
+  end
+  number
+end
