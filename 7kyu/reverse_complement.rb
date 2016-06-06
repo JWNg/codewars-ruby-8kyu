@@ -15,3 +15,9 @@
 #Note: You need to take care of lower and upper case. And if a sequence conatains some invalid characters you need to return "Invalid sequence".
 #
 #This kata is based on the following one but with a little step in addition.
+
+def reverse_complement(dna)
+  return "Invalid sequence" if dna.count("ACGTacgt") != dna.size
+  dna.gsub!(/[ACGT]/, 'A' => 'T', 'C' => 'G', 'T' => 'A', 'G' => 'C', 'a' => 't', 'c' => 'g', 't' => 'a', 'g' => 'c')
+  dna.reverse!
+end
