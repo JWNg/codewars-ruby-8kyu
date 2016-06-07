@@ -14,3 +14,8 @@
 #end
 #
 #This method does not work as expected. Can you correct it#
+
+
+def remove_odd_numbers_from_array(a)
+  a.keep_if { |v| v%2 == 0 }      
+end
