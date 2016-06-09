@@ -18,3 +18,7 @@
 #
 #"THIS IS CRAZY!"  --> "THISERR ISERR CRAZYERR!"
 #Good luck!
+def err_bob(string)
+  string.gsub!(/(?<last>(?![aeiou])[a-z]\b)/, '\k<last>err')
+  string.gsub(/(?<last>(?![AEIOU])[A-Z]\b)/, '\k<last>ERR')
+end
