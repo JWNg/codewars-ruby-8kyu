@@ -24,3 +24,14 @@
 #The singular: '1 argument' as opposed to multiples: '3 arguments'
 #Verb agreement: 'and it is' as opposed to 'and they are'
 
+def an_argument(*arguments)
+  return "You didn't give me any arguments." if arguments == []
+  string = "You gave me #{arguments.size} argument"
+  arguments.size == 1 ? string << " and it is " : string << "s and they are "
+  if arguments.size > 1
+    last = arguments.last
+    arguments.pop
+  end
+  arguments.each {|argument| string << "\"#{argument}\", "}
+  !last.nil? ? string.chop.chop<< " and \"#{last}\"." : string.chop.chop << "."
+end
