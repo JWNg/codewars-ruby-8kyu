@@ -15,3 +15,15 @@
 #
 #1 <= N <= 10,000#
 
+# Return an integer
+def cumulative_triangle(n)
+  last_digit = 0
+  for i in 1..n #row
+    row = []
+    begin
+      last_digit += 1
+      row << last_digit
+    end until row.size == i
+    return row.inject {|sum, n| sum+ n} if i == n
+  end  
+end
