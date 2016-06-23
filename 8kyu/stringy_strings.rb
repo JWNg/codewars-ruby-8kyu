@@ -13,3 +13,12 @@
 #The size will always be positive and will only use whole numbers.
 #
 
+def stringy(size)
+  i, string = 0, ""
+  while i < size do
+    string[-1] == "1" ? string << "0" : string << "1"
+    i += 1
+   end
+  return string
+end
+
