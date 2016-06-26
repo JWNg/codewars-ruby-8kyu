@@ -12,3 +12,17 @@
 #0 <= score < 60	'F'
 #Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
 
+def get_grade(s1, s2, s3)
+  case avg = (s1.to_f + s2.to_f + s3.to_f)/3.0
+  when 90..100
+    "A"
+  when 80..90
+    "B"
+  when 70..80
+    "C"
+  when 60..70
+    "D"
+  else 
+   "F"
+  end   
+end
