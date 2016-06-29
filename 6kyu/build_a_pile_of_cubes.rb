@@ -14,7 +14,6 @@ def find_nb(m)
   number_of_cubes = 0  
   total = 0
   until total > m do
-    #binding.pry
     total = (0..number_of_cubes).inject {|total, n| total + (n**3)}
     return number_of_cubes if total == m    
     return -1 if total > m
