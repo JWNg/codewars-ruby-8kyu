@@ -11,12 +11,11 @@
 #
 
 def find_nb(m)
-  number_of_cubes = 0  
+  n = 0  
   total = 0
-  until total > m do
-    total = (0..number_of_cubes).inject {|total, n| total + (n**3)}
-    return number_of_cubes if total == m    
-    return -1 if total > m
-    number_of_cubes += 1
+  until total >= m do
+    total = ( (n * ( n + 1 ) ) / 2) **2
+    n += 1
   end  
+  total == m ? n-1 : -1
 end
