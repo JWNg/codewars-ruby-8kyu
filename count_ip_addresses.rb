@@ -22,3 +22,8 @@ def ipsBetween(start, ending)
   diff_0 = 16777216*(ending[0]-start[0])
   total = diff_3 + diff_2 + diff_1 + diff_0  
 end
+
+#require 'ipaddr'
+#def ipsBetween(start, ending)
+#  IPAddr.new(ending).to_i - IPAddr.new(start).to_i
+#end
