@@ -22,3 +22,12 @@
 #// (seq1)    up-GTCTTAGTGTAGCTATGCATGC-down
 #//              ||| ||||||||||||||||||
 #// (seq2)  down-CAGCATCACATCGATACGTACG-up#
+def check_DNA(seq1, seq2)  
+  seq1.length >= seq2.length ? (short, long = seq2, seq1.reverse) : (short, long = seq1, seq2.reverse)
+  length_diff = long.length - short.length
+  short.gsub!(/[AGTC]/, 'A' => 'T', 'G'=>'C', 'C'=>'G', 'T'=>'A')
+  for i in 0..length_diff do
+    return true if short == long[i..(-1-(length_diff-i))]
+  end
+  false
+end
