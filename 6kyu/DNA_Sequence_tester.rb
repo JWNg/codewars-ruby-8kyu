@@ -25,9 +25,12 @@
 def check_DNA(seq1, seq2)  
   seq1.length >= seq2.length ? (short, long = seq2, seq1.reverse) : (short, long = seq1, seq2.reverse)
   length_diff = long.length - short.length
-  short.gsub!(/[AGTC]/, 'A' => 'T', 'G'=>'C', 'C'=>'G', 'T'=>'A')
+  short_reversed = short.gsub(/[AGTC]/, 'A' => 'T', 'G' => 'C', 'T' => 'A', 'C' => 'G')
+
   for i in 0..length_diff do
-    return true if short == long[i..(-1-(length_diff-i))]
+    end_position = (-1-length_diff+i)
+    binding.pry
+    return i if short_reversed == long[i..end_position]
   end
   false
 end
