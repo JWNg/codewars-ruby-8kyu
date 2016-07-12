@@ -11,3 +11,10 @@
 #Notes
 #
 #You may consider that there will not be any empty vectors.#
+def min(list)
+  list.sort_by{|a| a}[0]  
+end
+
+def max(list)
+  list.sort_by{|a| a}[-1]  
+end
